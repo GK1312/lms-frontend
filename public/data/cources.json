@@ -1,0 +1,64 @@
+{
+  "courses": [
+    {
+      "url": "",
+      "thumbnail": "Thumb",
+      "alt": "David Miller-Learning JavaScript With Imagination",
+      "tag": "development",
+      "rating": 4.8,
+      "title": "Learning JavaScript With Imagination",
+      "author": "David Miller",
+      "price": "15.00"
+    },
+    {
+      "url": "",
+      "thumbnail": "Thumb2",
+      "alt": "David Miller-The Complete Graphic Design for Beginners",
+      "tag": "design",
+      "rating": 4.5,
+      "title": "The Complete Graphic Design for Beginners",
+      "author": "David Miller",
+      "price": "19.00"
+    },
+    {
+      "url": "",
+      "thumbnail": "Thumb3",
+      "alt": "David Miller-Learning Digital Marketing on Facebook",
+      "tag": "marketing",
+      "rating": 4.3,
+      "title": "Learning Digital Marketing on Facebook",
+      "author": "David Miller",
+      "price": "24.00"
+    },
+    {
+      "url": "",
+      "thumbnail": "Thumb4",
+      "alt": "David Miller-Financial Analyst Training & Investing Course",
+      "tag": "business",
+      "rating": 4.8,
+      "title": "Financial Analyst Training & Investing Course",
+      "author": "David Miller",
+      "price": "12.00"
+    },
+    {
+      "url": "",
+      "thumbnail": "Thumb5",
+      "alt": "David Miller-Data Analysis & Visualization Masterclass",
+      "tag": "data science",
+      "rating": 4.5,
+      "title": "Data Analysis & Visualization Masterclass",
+      "author": "David Miller",
+      "price": "27.00"
+    },
+    {
+      "url": "",
+      "thumbnail": "Thumb6",
+      "alt": "David Miller-Master the Fundamentals of Math",
+      "tag": "mathematics",
+      "rating": 4.7,
+      "title": "Master the Fundamentals of Math",
+      "author": "David Miller",
+      "price": "10.00"
+    }
+  ]
+}
