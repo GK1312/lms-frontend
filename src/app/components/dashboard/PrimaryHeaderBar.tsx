@@ -121,10 +121,10 @@ const PrimaryHeaderBar = React.memo(function PrimaryHeaderBar({
               color="#6C7383"
             />
           </div>
-          <nav className="mr-4 ml-auto text-sm text-text-light font-bold uppercase flex flex-row items-center gap-6">
+          <nav className="mr-4 ml-auto text-sm text-main-text font-bold uppercase flex flex-row items-center gap-6">
             {status === "authenticated" && (
               <>
-                <ul className="w-max flex flex-row items-center justify-start gap-12">
+                <ul className="w-max font-quicksand flex flex-row items-center justify-start gap-12">
                   <li>
                     <Link href={"/my-courses"}>MY COURSES</Link>
                   </li>
@@ -142,7 +142,7 @@ const PrimaryHeaderBar = React.memo(function PrimaryHeaderBar({
             )}
             {status === "unauthenticated" && (
               <>
-                <ul className="w-max flex flex-row items-center justify-start gap-12">
+                <ul className="w-max font-quicksand flex flex-row items-center justify-start gap-12">
                   <li>
                     <Link href={""}>Become an Instructor</Link>
                   </li>
@@ -157,7 +157,7 @@ const PrimaryHeaderBar = React.memo(function PrimaryHeaderBar({
           </nav>
         </Toolbar>
         {profile && (
-          <div className="default_header w-94 pt-4 pb-2 text-[#6C7383] flex flex-col items-stretch justify-start absolute top-full right-4 z-40 border border-solid border-light-border bg-white rounded-2xl shadow-auth-card">
+          <div className="default_header w-94 pt-4 pb-2 text-light font-quicksand flex flex-col items-stretch justify-start absolute top-full right-4 z-40 border border-solid border-light-border bg-white rounded-2xl shadow-auth-card">
             <div className="w-full min-w-0 mb-2 px-6 flex flex-row items-center justify-start gap-4">
               <Avatar
                 alt={session?.user?.name || ""}
@@ -165,31 +165,31 @@ const PrimaryHeaderBar = React.memo(function PrimaryHeaderBar({
                 sx={{ width: 40, height: 40 }}
               />
               <div className="min-w-0 text-left flex flex-col items-stretch justify-center">
-                <p className="text-label font-medium leading-tight flex items-center gap-1">
+                <p className="mb-1.5 text-label font-bold leading-none flex items-center gap-1">
                   {session?.user?.name || ""}
                 </p>
-                <p className="text-label text-light font-medium leading-tight text-ellipsis whitespace-nowrap overflow-hidden flex items-center gap-1">
+                <p className="text-label-sm font-medium font-poppins leading-tight text-ellipsis whitespace-nowrap overflow-hidden flex items-center gap-1">
                   {session?.user?.email || ""}
                 </p>
               </div>
             </div>
-            <div className="flex flex-col items-stretch justify-start">
+            <div className="font-poppins flex flex-col items-stretch justify-start">
               <Link
                 href={"/dashboard"}
-                className="min-h-9 py-3.5 px-6 text-label-md text-light font-bold leading-tight tracking-wider inline-flex items-center flex-hr gap-6 border-0 outline-0 select-none transition-all duration-200 hover:bg-bg-light"
+                className="min-h-9 py-3.5 px-6 text-sm text-light font-semibold leading-tight tracking-wider inline-flex items-center flex-hr gap-6 border-0 outline-0 select-none transition-all duration-200 hover:bg-bg-light"
               >
                 <MdSpaceDashboard size={17} />
                 Dashboard
               </Link>
               <Link
                 href={"profile"}
-                className="min-h-9 py-3.5 px-6 text-label-md text-light font-bold leading-tight tracking-wider inline-flex items-center flex-hr gap-6 border-0 outline-0 select-none transition-all duration-200 hover:bg-bg-light"
+                className="min-h-9 py-3.5 px-6 text-sm text-light font-semibold leading-tight tracking-wider inline-flex items-center flex-hr gap-6 border-0 outline-0 select-none transition-all duration-200 hover:bg-bg-light"
               >
                 <MdOutlineSettings size={17} />
                 Manage Profile
               </Link>
               <button
-                className="min-h-9 py-3.5 px-6 text-label-md text-light font-bold leading-tight tracking-wider inline-flex items-center flex-hr gap-6 border-0 outline-0 select-none transition-all duration-200 hover:bg-bg-light"
+                className="min-h-9 py-3.5 px-6 text-sm text-light font-semibold leading-tight tracking-wider inline-flex items-center flex-hr gap-6 border-0 outline-0 select-none transition-all duration-200 hover:bg-bg-light"
                 onClick={() =>
                   signOut({
                     callbackUrl: "/sign-in",

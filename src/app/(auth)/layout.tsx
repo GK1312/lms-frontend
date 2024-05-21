@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Poppins } from "next/font/google";
+import { Poppins, Quicksand } from "next/font/google";
 import "../globals.css";
 
 const poppins = Poppins({
@@ -8,6 +8,14 @@ const poppins = Poppins({
   display: "swap",
   preload: true,
   variable: "--font-poppins",
+});
+
+const quicksand = Quicksand({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+  display: "swap",
+  preload: true,
+  variable: "--font-quicksand",
 });
 
 export const metadata: Metadata = {
@@ -22,7 +30,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${poppins.variable} font-poppins`}>{children}</body>
+      <body className={`${poppins.variable} ${quicksand.variable} font-quicksand`}>{children}</body>
     </html>
   );
 }

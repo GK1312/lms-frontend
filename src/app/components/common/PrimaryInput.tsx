@@ -31,7 +31,7 @@ const PrimaryInput = React.memo(function PrimaryInput({
       <div className="mb-1 flex flex-row items-center justify-between">
         <label
           htmlFor={id}
-          className="text-label leading-snug font-medium flex items-center"
+          className="text-label-sm leading-snug font-normal font-poppins flex items-center"
         >
           {label}
         </label>
@@ -45,7 +45,7 @@ const PrimaryInput = React.memo(function PrimaryInput({
           autoComplete="off"
           className={`w-full px-4 py-2.5 ${
             type === "password" ? "pr-8" : ""
-          } text-label leading-tight font-normal border border-solid border-hr outline outline-2 outline-transparent outline-offset-2 rounded-md focus:shadow-input-focus ${
+          } text-label-sm leading-tight font-medium font-poppins border border-solid border-hr outline outline-2 outline-transparent outline-offset-2 rounded-md focus:shadow-input-focus ${
             isInvalid ? "shadow-input-danger" : ""
           } transition-all duration-200 ease-in-out`}
         />
@@ -69,7 +69,7 @@ PrimaryInput.displayName = "PrimaryInputComponent";
 
 const InputError = ({ message = "Invalid input" }: { message?: string }) => {
   return (
-    <p className="mt-1 text-label text-danger leading-tight font-medium flex gap-1 absolute top-0 visible">
+    <p className="mt-1 text-label-sm text-danger leading-tight font-medium flex gap-1 absolute top-0 visible">
       {message}
     </p>
   );

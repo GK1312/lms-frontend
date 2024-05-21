@@ -12,9 +12,9 @@ const ResetPasswordPage = React.memo(function resetPasswordPage() {
           subtitle="to continue to LMS"
         >
           <ResetPasswordForm />
-          <div className="text-label text-light leading-tight font-normal flex flex-row items-center gap-1">
+          <div className="text-label-sm text-light leading-tight font-normal font-poppins flex flex-row items-center gap-1">
             No account?{" "}
-            <Link href={"/sign-up"} className="text-accent font-semibold">
+            <Link href={"/sign-up"} className="text-accent font-medium font-poppins">
               Sign up
             </Link>
           </div>

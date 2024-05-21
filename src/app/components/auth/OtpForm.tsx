@@ -54,7 +54,7 @@ const OtpForm = React.memo(function OtpForm() {
                 onKeyUp={(e) => moveToNextField(index, e.currentTarget.value)}
                 autoComplete="one-time-code"
                 inputMode="numeric"
-                className={`w-full max-w-14 h-10 px-4 py-2 text-label leading-tight font-normal text-center border border-solid border-hr outline outline-1 outline-transparent rounded-md focus:shadow-input-focus ${
+                className={`w-full max-w-14 h-10 px-4 py-2 text-label-sm leading-tight font-normal text-center border border-solid border-hr outline outline-1 outline-transparent rounded-md focus:shadow-input-focus ${
                   Object.keys(errors).length > 0 ? "shadow-input-danger" : ""
                 } transition-all duration-200 ease-in-out`}
               />
@@ -65,7 +65,7 @@ const OtpForm = React.memo(function OtpForm() {
       {Object.keys(errors).length > 0 && (
         <div className={`input_error_box ${!isValid ? "h-6" : "h-0"} relative`}>
           {!isValid && (
-            <p className="mt-1 text-label text-danger leading-tight font-medium flex gap-1 absolute top-0 visible">
+            <p className="mt-1 text-label-sm text-danger leading-tight font-medium flex gap-1 absolute top-0 visible">
               Otp has to be 6 digit.
             </p>
           )}
@@ -77,7 +77,7 @@ const OtpForm = React.memo(function OtpForm() {
       >
         Verify OTP
       </button>
-      <div className="text-label text-light leading-tight font-normal flex flex-row items-center gap-1">
+      <div className="text-label-sm text-light leading-tight font-normal flex flex-row items-center gap-1">
         Didn&apos;t get code?{" "}
         <button type="button" className="text-accent font-semibold">
           Click to resend

@@ -21,9 +21,9 @@ const SignUpPage = React.memo(function signUpPage() {
             <div className="h-[1px] flex flex-row flex-hr items-stretch justify-start bg-hr"></div>
           </div>
           <SignUpForm />
-          <div className="text-label text-light leading-tight font-normal flex flex-row items-center gap-1">
+          <div className="text-label-sm text-light leading-tight font-normal font-poppins flex flex-row items-center gap-1">
             Have an account?{" "}
-            <Link href={"/sign-in"} className="text-accent font-semibold">
+            <Link href={"/sign-in"} className="text-accent font-medium font-poppins">
               Sign in
             </Link>
           </div>

@@ -9,17 +9,17 @@ import { TbProgress } from "react-icons/tb";
 export default function Home() {
   return (
     <>
-      <h1 className="text-3xl text-text-main leading-normal font-bold font-poppins">
+      <h1 className="text-3xl text-main-text leading-normal font-bold font-poppins">
         Hello, Gaurav Kadam
       </h1>
-      <p className="text-lg text-text-main font-medium">
+      <p className="text-lg text-main-text font-medium">
         Let’s learn something new today!
       </p>
       <div className="mt-6 px-4 py-3 flex flex-row items-center gap-4 bg-white rounded-lg shadow-normal-card">
         <div className="w-8 h-8 flex items-center justify-center">
           <FaClock size={30} color="#4B49AC" />
         </div>
-        <div className="flex flex-col items-center gap-2">
+        <div className="flex flex-col items-center gap-2.5">
           <h2 className="text-label font-medium leading-none font-poppins">
             Learning JavaScript With Imagination
           </h2>

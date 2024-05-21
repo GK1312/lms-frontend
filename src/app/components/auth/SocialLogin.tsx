@@ -132,7 +132,7 @@ const SocialLogin = React.memo(function SocialLogin({
             )}
           </span>
           <div className="w-full flex flex-row items-center justify-start gap-2 overflow-hidden">
-            <span className="text-sm leading-tight font-normal text-ellipsis whitespace-nowrap overflow-hidden">
+            <span className="text-sm text-main-text leading-tight font-normal font-poppins text-ellipsis whitespace-nowrap overflow-hidden">
               {social.title}
             </span>
           </div>

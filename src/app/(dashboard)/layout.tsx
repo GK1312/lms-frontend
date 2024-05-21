@@ -33,7 +33,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${poppins.variable} ${quicksand.variable} font-quicksand`}
+        className={`${poppins.variable} ${quicksand.variable} bg-[#f5f7ff]`}
       >
         <SessionAuthProvider>
           <PrimaryHeaderBar>{children}</PrimaryHeaderBar>
