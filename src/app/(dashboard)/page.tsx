@@ -1,11 +1,87 @@
-import Link from "next/link";
-import { Divider } from "@mui/material";
-import LinearProgressBar from "@/app/components/dashboard/LinearProgressBar";
-import { FaClock } from "react-icons/fa";
-import { IoDocumentOutline } from "react-icons/io5";
-import { MdQuiz } from "react-icons/md";
-import { PiExamFill, PiPlayBold } from "react-icons/pi";
-import { TbProgress } from "react-icons/tb";
+"use client";
+import { Bar } from "react-chartjs-2";
+import faker from "faker";
+import {
+  Chart as ChartJS,
+  CategoryScale,
+  LinearScale,
+  BarElement,
+  Title,
+  Tooltip,
+  Legend,
+  ChartOptions,
+  ChartData,
+} from "chart.js";
+ChartJS.register(
+  CategoryScale,
+  LinearScale,
+  BarElement,
+  Title,
+  Tooltip,
+  Legend
+);
+
+const options: ChartOptions<"bar"> = {
+  plugins: {
+    title: {
+      display: false,
+    },
+    legend: {
+      display: true,
+      position: "top",
+      align: "start",
+      labels: {
+        boxWidth: 18,
+        boxHeight: 18,
+        useBorderRadius: true,
+        borderRadius: 3.5,
+        padding: 20,
+        font: {
+          size: 14,
+          family: "Poppins",
+        },
+        color: "#333",
+      },
+    },
+  },
+  responsive: true,
+  scales: {
+    x: {
+      stacked: true,
+    },
+    y: {
+      stacked: true,
+      ticks: {
+        callback: function (value: number | string) {
+          return `${value}h`;
+        },
+        stepSize: 20,
+      },
+    },
+  },
+  layout: {},
+};
+const data: ChartData<"bar"> = {
+  labels: ["January", "February", "March", "April", "May"],
+  datasets: [
+    {
+      label: "Study",
+      data: [38, 20, 60, 36, 16],
+      backgroundColor: "#ff9053",
+    },
+    {
+      label: "Exam",
+      data: [20, 12, 4, 10, 4],
+      backgroundColor: "#f8efe2",
+    },
+    {
+      label: "Quiz",
+      data: [6, 8, 3, 4, 2],
+      backgroundColor: "#e1e2f6",
+    },
+  ],
+};
+
 export default function Home() {
   return (
     <>
@@ -15,46 +91,17 @@ export default function Home() {
       <p className="text-lg text-main-text font-medium">
         Let’s learn something new today!
       </p>
-      <div className="mt-6 px-4 py-3 flex flex-row items-center gap-4 bg-white rounded-lg shadow-normal-card">
-        <div className="w-8 h-8 flex items-center justify-center">
-          <FaClock size={30} color="#4B49AC" />
+      <div className="flex flex-wrap">
+        <div className="w-7/12">
+          <div className="flex flex-wrap">
+            <div className="w-7/12">
+              <Bar options={options} data={data} />
+            </div>
+            <div className="w-5/12"></div>
+          </div>
         </div>
-        <div className="flex flex-col items-center gap-2.5">
-          <h2 className="text-label font-medium leading-none font-poppins">
-            Learning JavaScript With Imagination
-          </h2>
-          <LinearProgressBar height={6} value={50} />
-        </div>
-        <Divider
-          orientation="vertical"
-          variant="middle"
-          flexItem
-          className="mx-6"
-        />
-        <div className="text-text-main flex items-center gap-2">
-          <IoDocumentOutline size={24} color="#ffaf98" title="Documents" />
-          <span className="text-lg font-semibold">15</span>
-        </div>
-        <div className="text-text-main flex items-center gap-2">
-          <MdQuiz size={24} color="#fd6e95" title="Quiz" />
-          <span className="text-lg font-semibold">6</span>
-        </div>
-        <div className="text-text-main flex items-center gap-2">
-          <PiExamFill size={24} color="#5fb587" title="Exams" />
-          <span className="text-lg font-semibold">3</span>
-        </div>
-        <div className="ml-auto flex items-center gap-4">
-          <button className="px-3 py-2 text-sm text-text-main font-medium font-poppins capitalize flex items-center gap-2 bg-[#f6efff] rounded-lg">
-            <TbProgress size={18} color="#9963eb" /> progress
-          </button>
-          <button className="px-3 py-2 text-sm text-text-main font-medium font-poppins capitalize flex items-center gap-2 bg-[#f6efff] rounded-lg">
-            <PiPlayBold size={18} color="#9963eb" /> resume
-          </button>
-        </div>
+        <div className="w-5/12"></div>
       </div>
-      <p className="mt-2 me-4 text-xs text-right font-medium font-poppins">
-        <Link href={""}>View all</Link>
-      </p>
     </>
   );
 }
